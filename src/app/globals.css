@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #173027;
+  --muted: #65736d;
+  --green: #2f7d4a;
+  --green-dark: #1d5b36;
+  --lime: #dcef78;
+  --cream: #f5f4ed;
+  --line: #dfe6e1;
+  --white: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: #fbfcfa;
+  color: var(--ink);
+  font-family: var(--font-nunito), Arial, sans-serif;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+}
+.container {
+  width: min(1240px, calc(100% - 40px));
+  margin-inline: auto;
+}
+.section {
+  padding: 72px 0;
+}
+.section-title {
+  font-size: clamp(28px, 3vw, 42px);
+  line-height: 1.1;
+  letter-spacing: -0.045em;
+  font-weight: 750;
+}
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border: 0;
+  border-radius: 8px;
+  padding: 0 20px;
+  cursor: pointer;
+  font-weight: 750;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+.button-primary {
+  background: var(--green);
+  color: white;
+}
+.button-primary:hover {
+  background: var(--green-dark);
+}
+.button-secondary {
+  background: white;
+  color: var(--ink);
+  border: 1px solid var(--line);
+}
+.button-ghost {
+  background: #edf5ef;
+  color: var(--green-dark);
+}
+.card {
+  background: white;
+  border: 1px solid #e7ebe8;
+  border-radius: 10px;
+}
+.input {
+  width: 100%;
+  min-height: 50px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  padding: 14px 15px;
+  outline: none;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+.input:focus {
+  border-color: var(--green);
+  box-shadow: 0 0 0 4px rgba(47, 125, 74, 0.1);
+}
+@media (max-width: 720px) {
+  .container {
+    width: min(100% - 24px, 1240px);
+  }
+  .section {
+    padding: 48px 0;
+  }
+  body {
+    padding-bottom: 68px;
+  }
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
